@@ -1,187 +1,165 @@
 import sys
 from itertools import combinations
 from py4j.java_gateway import JavaGateway
+import time
 
 class Reasoner:
     def __init__(self, ONTOLOGY, CLASS_NAME):
         self.gateway = JavaGateway()
         self.parser = self.gateway.getOWLParser()
         self.formatter = self.gateway.getSimpleDLFormatter()
-
-        #print("Loading the ontology...")
         self.ontology = self.parser.parseFile(ONTOLOGY)
         self.gateway.convertToBinaryConjunctions(self.ontology)
-        self.conceptNames = self.ontology.getConceptNames()
+        self.concept_names = self.ontology.getConceptNames()
         self.class_name = CLASS_NAME
         self.tbox = self.ontology.tbox()
         self.axioms = self.tbox.getAxioms()
-        self.allConcepts = self.ontology.getSubConcepts()
-        self.elFactory = self.gateway.getELFactory()
+        self.concepts = self.ontology.getSubConcepts()
+        self.el_fact = self.gateway.getELFactory()
         self.change = True
-        self.foundTop = False
+        self.if_top = False
+        self.gci_list = list()
+        self.init_concepts()
+  
 
-        #init the GCI subsumers list
-        self.gciList = list()
-        for concept in self.conceptNames:
+    def init_concepts(self):
+        for concept in self.concept_names:
             if str(concept).startswith('"') and str(concept).endswith('"'):
-                self.class_name = str('"' + CLASS_NAME + '"') 
-                break
-                if not(str(concept).startswith('"') and str(concept).endswith('"')):
-                    self.class_name = CLASS_NAME.replace('"', '')
+                self.class_name = str(f'"{self.class_name}"') 
                 break
 
-        self.conceptD = self.elFactory.getConceptName("d") 
-        conceptB = self.elFactory.getConceptName(self.class_name)
-        self.gciList.append(self.elFactory.getGCI(self.conceptD,conceptB))     
-
-    def andRule2(self):
-        for combo in combinations(self.gciList, 2):
-            conceptA = self.elFactory.getConceptName(str(combo[0].rhs()))
-            conceptA = combo[0].rhs()
-            conceptB = self.elFactory.getConceptName(str(combo[1].rhs()))
-            conceptB = combo[1].rhs()
-            newGci1 = self.elFactory.getGCI(self.conceptD, self.elFactory.getConjunction(combo[1].rhs(), combo[0].rhs()))
-            newGci2 = self.elFactory.getGCI(self.conceptD, self.elFactory.getConjunction(combo[0].rhs(), combo[1].rhs()))
+        self.d = self.el_fact.getConceptName("d") 
+        b = self.el_fact.getConceptName(self.class_name)
+        self.gci_list.append(self.el_fact.getGCI(self.d,b))  
+         
+    def conjuction_two(self):
+        for combination in combinations(self.gci_list, 2):
+            a = self.el_fact.getConceptName(str(combination[0].rhs()))
+            a = combination[0].rhs()
+            b = self.el_fact.getConceptName(str(combination[1].rhs()))
+            b = combination[1].rhs()
+            gci_one = self.el_fact.getGCI(self.d, self.el_fact.getConjunction(combination[1].rhs(), combination[0].rhs()))
+            gci_two = self.el_fact.getGCI(self.d, self.el_fact.getConjunction(combination[0].rhs(), combination[1].rhs()))
             
-            if conceptA in self.allConcepts and conceptB in self.allConcepts and (newGci1 not in self.gciList or 
-                                                                                  newGci2 not in self.gciList):
-                if newGci1 not in self.gciList:
-                    self.gciList.append(newGci1)
+            if a in self.concepts and b in self.concepts and (gci_one not in self.gci_list or 
+                                                                                  gci_two not in self.gci_list):
+                if gci_one not in self.gci_list:
+                    self.gci_list.append(gci_one)
                     self.change = True
-                if newGci2 not in self.gciList:
-                    self.gciList.append(newGci2)
+                if gci_two not in self.gci_list:
+                    self.gci_list.append(gci_two)
                     self.change = True
 
-    def TRule(self):
-        if not self.foundTop:
-            for concept in self.allConcepts:
-                conceptType = concept.getClass().getSimpleName()
-                if(conceptType == "TopConcept$"):
-                    top = self.elFactory.getTop()
-                    conceptB = self.elFactory.getConceptName(self.formatter.format(top))
-                    self.gciList.append(self.elFactory.getGCI(self.conceptD,conceptB))
-                    self.foundTop = True
+    def top_rule(self):
+        if not self.if_top:
+            for concept in self.concepts:
+                type = concept.getClass().getSimpleName()
+                if(type == "TopConcept$"):
+                    top = self.el_fact.getTop()
+                    b = self.el_fact.getConceptName(self.formatter.format(top))
+                    self.gci_list.append(self.el_fact.getGCI(self.d,b))
+                    self.if_top = True
                     self.change = True 
 
-    def andRule1(self, gci):
-        conceptType = gci.rhs().getClass().getSimpleName()
-        if(conceptType == "ConceptConjunction"):
+    def conjuction_one(self, gci):
+        type = gci.rhs().getClass().getSimpleName()
+        if(type == "ConceptConjunction"):
             for concept in gci.rhs().getConjuncts():
-                conceptB = self.elFactory.getConceptName(self.formatter.format(concept))
-                conceptB = concept
-                newGci = self.elFactory.getGCI(self.conceptD,conceptB)
-                if(newGci not in self.gciList):
-                    self.gciList.append(newGci)
+                b = self.el_fact.getConceptName(self.formatter.format(concept))
+                b = concept
+                new_gci = self.el_fact.getGCI(self.d,b)
+                if(new_gci not in self.gci_list):
+                    self.gci_list.append(new_gci)
                     self.change = True     
 
-    def eRule1(self, axiom, gci):
-        axiomType = axiom.getClass().getSimpleName() 
-        conceptTypeGci = gci.rhs().getClass().getSimpleName()
-        if(axiomType == "GeneralConceptInclusion" and conceptTypeGci == "ExistentialRoleRestriction"):
-            conceptType = axiom.rhs().getClass().getSimpleName()
-            if(axiom.lhs() == gci.rhs().filler() and conceptType == "ConceptName"):
-                existential = self.elFactory.getExistentialRoleRestriction(self.elFactory.getRole(str(gci.rhs().role())), axiom.rhs())
-                newGci = self.elFactory.getGCI(self.conceptD,existential)
-                if(newGci not in self.gciList):
-                    self.gciList.append(newGci)
+    def existential_one(self, axiom, gci):
+        axiom_type = axiom.getClass().getSimpleName() 
+        gci_type = gci.rhs().getClass().getSimpleName()
+        if(axiom_type == "GeneralConceptInclusion" and gci_type == "ExistentialRoleRestriction"):
+            type = axiom.rhs().getClass().getSimpleName()
+            if(axiom.lhs() == gci.rhs().filler() and type == "ConceptName"):
+                existential = self.el_fact.getExistentialRoleRestriction(self.el_fact.getRole(str(gci.rhs().role())), axiom.rhs())
+                new_gci = self.el_fact.getGCI(self.d,existential)
+                if(new_gci not in self.gci_list):
+                    self.gci_list.append(new_gci)
                     self.change = True
 
-    def checkInferenceInTbox(self,axiom,gci):
-        axiomType = axiom.getClass().getSimpleName() 
-        if(axiomType == "GeneralConceptInclusion" and self.formatter.format(axiom.lhs()) == self.formatter.format(gci.rhs())):
-            conceptType = axiom.rhs().getClass().getSimpleName()
-            if(conceptType == "ExistentialRoleRestriction"):
-                conceptB = self.elFactory.getExistentialRoleRestriction(axiom.rhs().role(), axiom.rhs().filler())
-            elif(conceptType == "ConceptName" or conceptType == "ConceptConjunction"):
-                conceptB = self.elFactory.getConceptName(self.formatter.format(axiom.rhs()))
+    def top_inference(self,axiom,gci):
+        axiom_type = axiom.getClass().getSimpleName() 
+        if(axiom_type == "GeneralConceptInclusion" and self.formatter.format(axiom.lhs()) == self.formatter.format(gci.rhs())):
+            type = axiom.rhs().getClass().getSimpleName()
+            if(type == "ExistentialRoleRestriction"):
+                b = self.el_fact.getExistentialRoleRestriction(axiom.rhs().role(), axiom.rhs().filler())
+            elif(type == "ConceptName" or type == "ConceptConjunction"):
+                b = self.el_fact.getConceptName(self.formatter.format(axiom.rhs()))
             else:
                 return
-            conceptB = axiom.rhs()
-            newGci = self.elFactory.getGCI(self.conceptD,conceptB)
-            axiomType = conceptB.getClass().getSimpleName() 
-            if newGci not in self.gciList:
-                self.gciList.append(newGci)
+            b = axiom.rhs()
+            new_gci = self.el_fact.getGCI(self.d,b)
+            axiom_type = b.getClass().getSimpleName() 
+            if new_gci not in self.gci_list:
+                self.gci_list.append(new_gci)
                 self.change = True
     
-    def checkEquivalenceInTbox(self,axiom,gci):
-        axiomType = axiom.getClass().getSimpleName() 
-        if(axiomType == "EquivalenceAxiom"):
-            conceptList = list(axiom.getConcepts())
-            conceptCounter = 0
+    def top_equivalence(self,axiom,gci):
+        axiom_type = axiom.getClass().getSimpleName() 
+        if(axiom_type == "EquivalenceAxiom"):
+            concepts = list(axiom.getConcepts())
+            n_concepts = 0
             for concept in axiom.getConcepts():
-                conceptType = concept.getClass().getSimpleName()
+                type = concept.getClass().getSimpleName()
                 if(self.formatter.format(concept) == self.formatter.format(gci.rhs()) and  
-                    (conceptType == "ExistentialRoleRestriction" or conceptType == "ConceptName" or 
-                        conceptType == "ConceptConjunction")):
-                    conceptInverse = int(not(conceptCounter))
+                    (type == "ExistentialRoleRestriction" or type == "ConceptName" or 
+                        type == "ConceptConjunction")):
+                    conceptInverse = int(not(n_concepts))
                 
-                    conceptB = self.elFactory.getConceptName(self.formatter.format(conceptList[conceptInverse]))
-                    conceptB = conceptList[conceptInverse]
-                    newGci = self.elFactory.getGCI(self.conceptD,conceptB)
-                    if newGci not in self.gciList:
-                        self.gciList.append(newGci)
+                    b = self.el_fact.getConceptName(self.formatter.format(concepts[conceptInverse]))
+                    b = concepts[conceptInverse]
+                    new_gci = self.el_fact.getGCI(self.d,b)
+                    if new_gci not in self.gci_list:
+                        self.gci_list.append(new_gci)
                         self.change = True
-                conceptCounter+=1
+                n_concepts+=1
 
-    def getSubsumers(self, args):
-        if args.reasoner == 'elk':
-            elk = self.gateway.getELKReasoner()
-            classSubsumers = self.elFactory.getConceptName(self.class_name)
-
-            print("Using ELK reasoner:")
-            elk.setOntology(self.ontology)
-            subsumers = elk.getSubsumers(classSubsumers)
-
-            subsumers_string = subsumers.toString()
-            subsumers_list = subsumers_string.strip("[]").split(',')
-            for element in subsumers_list:
-                clean_element = element.strip().strip('"')
-                print(clean_element)
-
-            print("(", len(subsumers), " in total)")
-
-        elif args.reasoner == 'hermit':
-            hermit = self.gateway.getHermiTReasoner()
-            hermit.setOntology(self.ontology)
-            class_subsumers = self.elFactory.getConceptName(self.class_name)
-
-            print("Using HermiT reasoner:")
-            subsumers = hermit.getSubsumers(class_subsumers)
-
-            subsumers_string = subsumers.toString()
-            subsumers_list = subsumers_string.strip("[]").split(',')
-            for element in subsumers_list:
-                clean_element = element.strip().strip('"')
-                print(clean_element)
-
-            print("(", len(subsumers), " in total)")
+    def get_subsumers(self, reasoner):
+        if reasoner in ['elk', 'hermit']:
+            return self.ont_subsumers(reasoner)
         else:
-            while self.change:
-                self.change = False
-                self.andRule2()
-                self.TRule()
+            return self.custom_subsumers()
 
-                for gci in self.gciList:
-                    self.andRule1(gci)
-                    for axiom in self.axioms:
-                        self.eRule1(axiom,gci)
-                        self.checkInferenceInTbox(axiom,gci)
-                        self.checkEquivalenceInTbox(axiom,gci)
-        
+    def ont_subsumers(self, which_reason):
+        reasoner = self.gateway.getHermiTReasoner() if which_reason == "hermit" else self.gateway.getELKReasoner()
+        reasoner.setOntology(self.ontology)
+        class_subsumers = self.el_fact.getConceptName(self.class_name)
+        subsumers = reasoner.getSubsumers(class_subsumers)
 
+        subsumers_string = subsumers.toString()
+        subsumers_list = subsumers_string.strip("[]").split(',')
+        for element in subsumers_list:
+            clean_element = element.strip().strip('"')
+            print(clean_element)
 
-           #print("Using our reasoner:")
+    def custom_subsumers(self):
+        while self.change:
+            self.change = False
+            self.conjuction_two()
+            self.top_rule()
 
-            conceptCounter = 0
-            for gci in self.gciList:
-                conceptType = gci.rhs().getClass().getSimpleName()
-                if(conceptType == "ConceptName" or conceptType == "TopConcept$"):
-                    finalName = self.formatter.format(gci.rhs())
-                    if str(finalName).startswith('"') and str(finalName).endswith('"'):
-                        finalName = finalName.replace('"', '')
-                    conceptCounter += 1
-                    print(finalName)
+            for gci in self.gci_list:
+                self.conjuction_one(gci)
+                for axiom in self.axioms:
+                    self.existential_one(axiom,gci)
+                    self.top_inference(axiom,gci)
+                    self.top_equivalence(axiom,gci)
 
-            # print("(",conceptCounter," in total)")
+        n_concepts = 0
+        for gci in self.gci_list:
+            type = gci.rhs().getClass().getSimpleName()
+            if(type == "ConceptName" or type == "TopConcept$"):
+                concept_name = self.formatter.format(gci.rhs())
+                if str(concept_name).startswith('"') and str(concept_name).endswith('"'):
+                    concept_name = concept_name.replace('"', '')
+                n_concepts += 1
+                print(concept_name)
 
 

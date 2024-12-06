@@ -5,10 +5,10 @@ from os.path import exists
 import argparse
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='EL Reasoner group 2')
+    parser = argparse.ArgumentParser(description='Ontology reasoner based on EL Description Logic')
 
 
-    parser.add_argument('--reasoner', choices=['elk', 'hermit'], default='our reasoner',
+    parser.add_argument('--reasoner', choices=['elk', 'hermit'], default='custom',
                         help='Choose the reasoner (elk, hermit, our)')
     parser.add_argument("ONTOLOGY")
     parser.add_argument("CLASS_NAME")
@@ -23,4 +23,4 @@ if __name__ == "__main__":
 
 
     reasoner = Reasoner(args.ONTOLOGY, args.CLASS_NAME)
-    reasoner.getSubsumers(args)
+    reasoner.get_subsumers(args.reasoner)
