@@ -122,10 +122,12 @@ class Reasoner:
                 n_concepts+=1
 
     def get_subsumers(self, reasoner):
+        start_time = time.time()
         if reasoner in ['elk', 'hermit']:
-            return self.ont_subsumers(reasoner)
+            self.ont_subsumers(reasoner)
         else:
-            return self.custom_subsumers()
+            self.custom_subsumers()
+        print(f"get_subsumers completed in {time.time() - start_time:.2f} seconds")
 
     def ont_subsumers(self, which_reason):
         reasoner = self.gateway.getHermiTReasoner() if which_reason == "hermit" else self.gateway.getELKReasoner()
@@ -140,26 +142,33 @@ class Reasoner:
             print(clean_element)
 
     def custom_subsumers(self):
+        processed_gci = set()  
+        concept_names = set()  
+
         while self.change:
             self.change = False
-            self.conjuction_two()
-            self.top_rule()
+            self.conjuction_two()  
+            self.top_rule()  
 
-            for gci in self.gci_list:
+            for gci in list(self.gci_list):  
+                if gci in processed_gci:
+                    continue
+                processed_gci.add(gci)  
                 self.conjuction_one(gci)
                 for axiom in self.axioms:
-                    self.existential_one(axiom,gci)
-                    self.top_inference(axiom,gci)
-                    self.top_equivalence(axiom,gci)
+                    self.existential_one(axiom, gci)
+                    self.top_inference(axiom, gci)
+                    self.top_equivalence(axiom, gci)
 
-        n_concepts = 0
-        for gci in self.gci_list:
-            type = gci.rhs().getClass().getSimpleName()
-            if(type == "ConceptName" or type == "TopConcept$"):
-                concept_name = self.formatter.format(gci.rhs())
-                if str(concept_name).startswith('"') and str(concept_name).endswith('"'):
-                    concept_name = concept_name.replace('"', '')
-                n_concepts += 1
-                print(concept_name)
+                type = gci.rhs().getClass().getSimpleName()
+                if type in ("ConceptName", "TopConcept$"):
+                    concept_name = self.formatter.format(gci.rhs()).strip('"')
+                    concept_names.add(concept_name)  
+
+        # Idk i think sorthing them makes it easier to crosscheck
+        for name in sorted(concept_names):  
+            print(name)
+
+
 
 
