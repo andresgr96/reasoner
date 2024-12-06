@@ -20,7 +20,6 @@ if __name__ == "__main__":
         print(Fore.RED + "ERROR: " + Style.RESET_ALL + "The ontology file does not exist. Please check parameters and/or if file exists")
         exit(0)
 
-
-
     reasoner = Reasoner(args.ONTOLOGY, args.CLASS_NAME)
-    reasoner.get_subsumers(args.reasoner)
+    runtime, n_subsumers = reasoner.get_subsumers(args.reasoner)
+    print(f"get_subsumers completed in {runtime} seconds with {n_subsumers} subsumers")
