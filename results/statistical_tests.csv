@@ -1,5 +1,5 @@
 Metric,Comparison,Statistic,p-value
-Runtime (s),Custom vs. Elk,144.0,3.462842221038823e-05
-Runtime (s),Custom vs. Hermit,144.0,3.629993584104522e-05
-Subsumers Found,Custom vs. Elk,63.0,0.6080540429156747
-Subsumers Found,Custom vs. Hermit,40.5,0.061427510753685695
+Runtime (s),Custom vs. Elk,225.0,2.4718473605869e-06
+Runtime (s),Custom vs. Hermit,225.0,3.09731188964829e-06
+Subsumers Found,Custom vs. Elk,103.5,0.710318685025114
+Subsumers Found,Custom vs. Hermit,72.0,0.08653716479372542

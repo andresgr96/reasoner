@@ -15,8 +15,9 @@ if __name__ == "__main__":
     food_ont_and_class = ["./ontologies/food.owl.xml", "FOODON_03460238"]
     skin_ont_and_class = ["./ontologies/skin.owl", "Integrin"]
     clinical_ont_and_class = ["./ontologies/clinical.owl.xml", "Amyloidosis"]
+    donut_ont_and_class = ["./ontologies/donut_store.owl", "FilledDonut"]
 
-    ontologies = [pizza_ont_and_class, food_ont_and_class, skin_ont_and_class, clinical_ont_and_class]
+    ontologies = [pizza_ont_and_class, food_ont_and_class, skin_ont_and_class, clinical_ont_and_class, donut_ont_and_class]
     reasoners = ["elk", "hermit", "custom"]
     n_repetitions = 3
     results = []

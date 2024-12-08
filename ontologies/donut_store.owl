@@ -1,0 +1,1301 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/hanacosip/restaurant-donut"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/hanacosip/restaurant-donut">
+    <Prefix name="" IRI="http://www.semanticweb.org/hanacosip/restaurant-donut/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="/ApricotJamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/BaconBits"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/BaconDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Bits"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/BlueberryJamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CakeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CakeDough"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CaramelCustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CaramelDrizzle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CheeseBits"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CheeseDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ChocolateCakeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ChocolateCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ChocolateCustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ChocolateDrizzle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ChocolateSprinkles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CinnamonPowder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CinnamonSugarCakeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ClassicCakeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CoffeeCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CoffeeCustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CoffeeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CoffeePowder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CreamFilledDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CroissantDough"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Cronut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CrushedNuts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CustardFilledDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Donut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/DonutDough"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/DonutFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/DonutShape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/DonutTopping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Drizzle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/FilledDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/FlatBallShape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Glaze"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/GlazedDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/GranulatedDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/HazelnutCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/JamFilledDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/JamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/LemonCustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Low"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/MatchaCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/MatchaDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/MatchaPowder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Medium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/None"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/NutFreeDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/OreoBits"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/OreoCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/OreoDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/PeanutButterCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Powder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/PowderedDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/PowderedSugar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/RainbowSprinkles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/RasberryJamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/RingShape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SavoryDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SpecialtyDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Sprinkles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/StrawberryJamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Sugar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SugarCoatedDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SugarGlaze"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Sweetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/VanillaCreamFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/VanillaCustardFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/VanillaGlaze"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/YeastDonut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/YeastDough"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasSweetness"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/OriginatesFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasDough"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasFilling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasShape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasTopping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isDoughOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isFillingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isShapeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/isToppingOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/France"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Japan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/UnitedStatesOfAmerica"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="/CakeDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasDough"/>
+                <Class IRI="/CakeDough"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/CoffeeDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SpecialtyDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasFilling"/>
+                <ObjectUnionOf>
+                    <Class IRI="/CoffeeCreamFilling"/>
+                    <Class IRI="/CoffeeCustardFilling"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/CoffeePowder"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/Cronut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasDough"/>
+                <Class IRI="/CroissantDough"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/FilledDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasFilling"/>
+                <Class IRI="/DonutFilling"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/GlazedDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/YeastDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/Glaze"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/GranulatedDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SugarCoatedDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/Sugar"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/MatchaDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SpecialtyDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasFilling"/>
+                <Class IRI="/MatchaCreamFilling"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/MatchaPowder"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/NutFreeDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="/hasTopping"/>
+                    <Class IRI="/CrushedNuts"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/OreoDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SpecialtyDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasFilling"/>
+                <Class IRI="/OreoCreamFilling"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/OreoDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SpecialtyDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/OreoBits"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/PowderedDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/SugarCoatedDonut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasTopping"/>
+                <Class IRI="/PowderedSugar"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/SavoryDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/HasSweetness"/>
+                <Class IRI="/None"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/SugarCoatedDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/PowderedSugar"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/YeastDonut"/>
+        <ObjectIntersectionOf>
+            <Class IRI="/Donut"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="/hasDough"/>
+                <Class IRI="/YeastDough"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="/ApricotJamFilling"/>
+        <Class IRI="/JamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ApricotJamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BaconBits"/>
+        <Class IRI="/Bits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BaconBits"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/None"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BaconDonut"/>
+        <Class IRI="/SavoryDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BaconDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/BaconBits"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Bits"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BlueberryJamFilling"/>
+        <Class IRI="/JamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/BlueberryJamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CakeDough"/>
+        <Class IRI="/DonutDough"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CaramelCustardFilling"/>
+        <Class IRI="/CustardFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CaramelCustardFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CaramelDrizzle"/>
+        <Class IRI="/Drizzle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CheeseBits"/>
+        <Class IRI="/Bits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CheeseBits"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/None"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CheeseDonut"/>
+        <Class IRI="/SavoryDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CheeseDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/CheeseBits"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCakeDonut"/>
+        <Class IRI="/CakeDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCakeDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/ChocolateDrizzle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCakeDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/ChocolateSprinkles"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCakeDonut"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="/OriginatesFrom"/>
+            <NamedIndividual IRI="/UnitedStatesOfAmerica"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCustardFilling"/>
+        <Class IRI="/CustardFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateCustardFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateDrizzle"/>
+        <Class IRI="/Drizzle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ChocolateSprinkles"/>
+        <Class IRI="/Sprinkles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CinnamonPowder"/>
+        <Class IRI="/Powder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CinnamonPowder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Low"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CinnamonSugarCakeDonut"/>
+        <Class IRI="/CakeDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CinnamonSugarCakeDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/CaramelDrizzle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CinnamonSugarCakeDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/CinnamonPowder"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ClassicCakeDonut"/>
+        <Class IRI="/CakeDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ClassicCakeDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <ObjectUnionOf>
+                <Class IRI="/PowderedSugar"/>
+                <Class IRI="/SugarGlaze"/>
+                <Class IRI="/VanillaGlaze"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeeCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeeCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Low"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeeCustardFilling"/>
+        <Class IRI="/CustardFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeeCustardFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Low"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeePowder"/>
+        <Class IRI="/Powder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CoffeePowder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/None"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CreamFilledDonut"/>
+        <Class IRI="/FilledDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CreamFilledDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasFilling"/>
+            <Class IRI="/CreamFilling"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CreamFilling"/>
+        <Class IRI="/DonutFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CroissantDough"/>
+        <Class IRI="/DonutDough"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Cronut"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <ObjectUnionOf>
+                <Class IRI="/CaramelDrizzle"/>
+                <Class IRI="/ChocolateDrizzle"/>
+                <Class IRI="/PowderedSugar"/>
+                <Class IRI="/VanillaGlaze"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CrushedNuts"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CrushedNuts"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Low"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CustardFilledDonut"/>
+        <Class IRI="/FilledDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CustardFilledDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasFilling"/>
+            <Class IRI="/CustardFilling"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/CustardFilling"/>
+        <Class IRI="/DonutFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Donut"/>
+        <Class IRI="/Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Donut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasShape"/>
+            <Class IRI="/DonutShape"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/DonutDough"/>
+        <Class IRI="/Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/DonutFilling"/>
+        <Class IRI="/Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/DonutTopping"/>
+        <Class IRI="/Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Drizzle"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Drizzle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/FilledDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasTopping"/>
+            <Class IRI="/DonutTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/FlatBallShape"/>
+        <Class IRI="/DonutShape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Glaze"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Glaze"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/GlazedDonut"/>
+        <Class IRI="/YeastDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/GranulatedDonut"/>
+        <Class IRI="/SugarCoatedDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/HazelnutCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/HazelnutCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/High"/>
+        <Class IRI="/Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/JamFilledDonut"/>
+        <Class IRI="/FilledDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/JamFilledDonut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/hasFilling"/>
+            <Class IRI="/JamFilling"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/JamFilling"/>
+        <Class IRI="/DonutFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/LemonCustardFilling"/>
+        <Class IRI="/CustardFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/LemonCustardFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Low"/>
+        <Class IRI="/Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/MatchaCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/MatchaCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/MatchaPowder"/>
+        <Class IRI="/Powder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/MatchaPowder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Low"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Medium"/>
+        <Class IRI="/Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/None"/>
+        <Class IRI="/Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/OreoBits"/>
+        <Class IRI="/Bits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/OreoBits"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/OreoCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/OreoCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/OreoDonut"/>
+        <Class IRI="/SpecialtyDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PeanutButterCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PeanutButterCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Powder"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PowderedDonut"/>
+        <Class IRI="/SugarCoatedDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PowderedSugar"/>
+        <Class IRI="/Powder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PowderedSugar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/RainbowSprinkles"/>
+        <Class IRI="/Sprinkles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/RasberryJamFilling"/>
+        <Class IRI="/JamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/RasberryJamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/RingShape"/>
+        <Class IRI="/DonutShape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/SpecialtyDonut"/>
+        <Class IRI="/Donut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Sprinkles"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Sprinkles"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/StrawberryJamFilling"/>
+        <Class IRI="/JamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/StrawberryJamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Sugar"/>
+        <Class IRI="/DonutTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/SugarCoatedDonut"/>
+        <Class IRI="/YeastDonut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/SugarGlaze"/>
+        <Class IRI="/Glaze"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VanillaCreamFilling"/>
+        <Class IRI="/CreamFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VanillaCreamFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VanillaCustardFilling"/>
+        <Class IRI="/CustardFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VanillaCustardFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasSweetness"/>
+            <Class IRI="/Medium"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VanillaGlaze"/>
+        <Class IRI="/Glaze"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/YeastDonut"/>
+        <Class IRI="/Donut"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/YeastDough"/>
+        <Class IRI="/DonutDough"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="/ApricotJamFilling"/>
+        <Class IRI="/BlueberryJamFilling"/>
+        <Class IRI="/RasberryJamFilling"/>
+        <Class IRI="/StrawberryJamFilling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/BaconBits"/>
+        <Class IRI="/CheeseBits"/>
+        <Class IRI="/OreoBits"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/BaconDonut"/>
+        <Class IRI="/CheeseDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/CaramelCustardFilling"/>
+        <Class IRI="/ChocolateCustardFilling"/>
+        <Class IRI="/CoffeeCustardFilling"/>
+        <Class IRI="/LemonCustardFilling"/>
+        <Class IRI="/VanillaCustardFilling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/CaramelDrizzle"/>
+        <Class IRI="/ChocolateDrizzle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/ChocolateCakeDonut"/>
+        <Class IRI="/CinnamonSugarCakeDonut"/>
+        <Class IRI="/ClassicCakeDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/ChocolateCreamFilling"/>
+        <Class IRI="/CoffeeCreamFilling"/>
+        <Class IRI="/HazelnutCreamFilling"/>
+        <Class IRI="/MatchaCreamFilling"/>
+        <Class IRI="/OreoCreamFilling"/>
+        <Class IRI="/PeanutButterCreamFilling"/>
+        <Class IRI="/VanillaCreamFilling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/ChocolateSprinkles"/>
+        <Class IRI="/RainbowSprinkles"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/CinnamonPowder"/>
+        <Class IRI="/CoffeePowder"/>
+        <Class IRI="/MatchaPowder"/>
+        <Class IRI="/PowderedSugar"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/CoffeeDonut"/>
+        <Class IRI="/MatchaDonut"/>
+        <Class IRI="/OreoDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/CreamFilledDonut"/>
+        <Class IRI="/CustardFilledDonut"/>
+        <Class IRI="/JamFilledDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/Donut"/>
+        <Class IRI="/DonutDough"/>
+        <Class IRI="/DonutFilling"/>
+        <Class IRI="/DonutTopping"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/FlatBallShape"/>
+        <Class IRI="/RingShape"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/GlazedDonut"/>
+        <Class IRI="/SugarCoatedDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/GranulatedDonut"/>
+        <Class IRI="/PowderedDonut"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/High"/>
+        <Class IRI="/Low"/>
+        <Class IRI="/Medium"/>
+        <Class IRI="/None"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/SugarGlaze"/>
+        <Class IRI="/VanillaGlaze"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="/Country"/>
+        <NamedIndividual IRI="/France"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Country"/>
+        <NamedIndividual IRI="/Japan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Country"/>
+        <NamedIndividual IRI="/UnitedStatesOfAmerica"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/France"/>
+        <NamedIndividual IRI="/Japan"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/France"/>
+        <NamedIndividual IRI="/UnitedStatesOfAmerica"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/Japan"/>
+        <NamedIndividual IRI="/UnitedStatesOfAmerica"/>
+    </DifferentIndividuals>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/hasDough"/>
+        <ObjectProperty IRI="/hasIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/hasFilling"/>
+        <ObjectProperty IRI="/hasIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/hasTopping"/>
+        <ObjectProperty IRI="/hasIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/isDoughOf"/>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/isFillingOf"/>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/isToppingOf"/>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/hasDough"/>
+        <ObjectProperty IRI="/isDoughOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/hasFilling"/>
+        <ObjectProperty IRI="/isFillingOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/hasIngredient"/>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/hasShape"/>
+        <ObjectProperty IRI="/isShapeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/hasTopping"/>
+        <ObjectProperty IRI="/isToppingOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/HasSweetness"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/OriginatesFrom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/hasDough"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/hasFilling"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="/hasShape"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="/isDoughOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="/isFillingOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="/isShapeOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="/isToppingOf"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="/OriginatesFrom"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="/hasIngredient"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="/isIngredientOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasSweetness"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/OriginatesFrom"/>
+        <Class IRI="/Food"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasDough"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasFilling"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasIngredient"/>
+        <Class IRI="/Food"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasShape"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasTopping"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isDoughOf"/>
+        <Class IRI="/DonutDough"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isFillingOf"/>
+        <Class IRI="/DonutFilling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isIngredientOf"/>
+        <Class IRI="/Food"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isShapeOf"/>
+        <Class IRI="/DonutShape"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/isToppingOf"/>
+        <Class IRI="/DonutTopping"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasSweetness"/>
+        <Class IRI="/Sweetness"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/OriginatesFrom"/>
+        <Class IRI="/Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasDough"/>
+        <Class IRI="/DonutDough"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasFilling"/>
+        <Class IRI="/DonutFilling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasIngredient"/>
+        <Class IRI="/Food"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasShape"/>
+        <Class IRI="/DonutShape"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasTopping"/>
+        <Class IRI="/DonutTopping"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isDoughOf"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isFillingOf"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isIngredientOf"/>
+        <Class IRI="/Food"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isShapeOf"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/isToppingOf"/>
+        <Class IRI="/Donut"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

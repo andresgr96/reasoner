@@ -14,7 +14,7 @@ formatter = gateway.getSimpleDLFormatter()
 print("Loading the ontology...")
 
 # load an ontology from a file
-ontology = parser.parseFile("./ontologies/food.owl.xml")
+ontology = parser.parseFile("./ontologies/ecosystem.owl.xml")
 
 print("Loaded the ontology!")
 
@@ -32,8 +32,8 @@ axioms = tbox.getAxioms()
 
 
 print("These are the axioms in the TBox:")
-for axiom in axioms:
-    print(formatter.format(axiom))
+# for axiom in axioms:
+#     print(formatter.format(axiom))
 
 
 # get all concepts occurring in the ontology
@@ -41,7 +41,7 @@ allConcepts = ontology.getSubConcepts()
 
 print()
 print("There are ",len(allConcepts), " concepts occurring in the ontology")
-print("These are the concepts occurring in the ontology:")
+# print("These are the concepts occurring in the ontology:")
 print([formatter.format(x) for x in allConcepts])
 
 conceptNames = ontology.getConceptNames()
