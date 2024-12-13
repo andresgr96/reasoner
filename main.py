@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     reasoner = Reasoner(args.ONTOLOGY, args.CLASS_NAME)
     runtime, n_subsumers = reasoner.get_subsumers(args.reasoner)
-    print(f"get_subsumers completed in {runtime} seconds with {n_subsumers} subsumers")
+    # print(f"get_subsumers completed in {runtime} seconds with {n_subsumers} subsumers")
