@@ -16,7 +16,7 @@ class Reasoner:
         self.axioms = self.tbox.getAxioms()
         self.concepts = set(self.ontology.getSubConcepts())  
         self.el_fact = self.gateway.getELFactory()
-        self.change = True
+        self.found_axioms = True
         self.if_top = False
         self.gci_set = set()  
         self.init_concepts()
@@ -41,7 +41,7 @@ class Reasoner:
                     b = self.el_fact.getConceptName(self.formatter.format(top))
                     self.gci_set.add(self.el_fact.getGCI(self.d, b))
                     self.if_top = True
-                    self.change = True
+                    self.found_axioms = True
                     break
 
     def conjuction_one(self, gci):
@@ -51,7 +51,7 @@ class Reasoner:
                 new_gci = self.el_fact.getGCI(self.d, concept)
                 if new_gci not in self.gci_set:
                     self.gci_set.add(new_gci)
-                    self.change = True     
+                    self.found_axioms = True     
 
     def conjuction_two(self):
         """Combine every two GCIs in gci_set and add their conjunctions to gci_set."""
@@ -65,10 +65,10 @@ class Reasoner:
             if a in self.concepts and b in self.concepts and (gci_one not in self.gci_set or gci_two not in self.gci_set):
                 if gci_one not in self.gci_set:
                     self.gci_set.add(gci_one)
-                    self.change = True
+                    self.found_axioms = True
                 if gci_two not in self.gci_set:
                     self.gci_set.add(gci_two)
-                    self.change = True   
+                    self.found_axioms = True   
 
     def existential_one(self, axiom, gci):
         """Handle existential role restrictions in axioms."""
@@ -83,7 +83,7 @@ class Reasoner:
             new_gci = self.el_fact.getGCI(self.d, existential)
             if new_gci not in self.gci_set:
                 self.gci_set.add(new_gci)
-                self.change = True
+                self.found_axioms = True
 
     def top_inference(self, axiom, gci):
         """Infer new GCIs from axioms in the TBox."""
@@ -101,7 +101,7 @@ class Reasoner:
             new_gci = self.el_fact.getGCI(self.d, new_rhs)
             if new_gci not in self.gci_set:
                 self.gci_set.add(new_gci)
-                self.change = True
+                self.found_axioms = True
 
     def top_equivalence(self, axiom, gci):
         """Handle equivalence axioms."""
@@ -117,7 +117,7 @@ class Reasoner:
                     new_gci = self.el_fact.getGCI(self.d, inverse)
                     if new_gci not in self.gci_set:
                         self.gci_set.add(new_gci)
-                        self.change = True
+                        self.found_axioms = True
 
     def get_subsumers(self, reasoner):
         """Get subsumers for the given reasoner."""
@@ -147,8 +147,8 @@ class Reasoner:
         processed_gci = set()  
         concept_names = set()  
 
-        while self.change:
-            self.change = False
+        while self.found_axioms:
+            self.found_axioms = False
             self.conjuction_two()  
             self.top_rule()  
 
